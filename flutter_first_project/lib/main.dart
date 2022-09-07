@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 class MyApp extends StatelessWidget{
-  const MyApp({Key? key}) : super(key:key);
+
+     void _incrementCounter() {
+   print(name);
+  }
+    String name = "Waleed Fayez Almutairi";
 @override 
 Widget build(BuildContext context){
-    String name = "Waleed Fayez Almutairi";
   return MaterialApp( 
     
   home: Scaffold(
     
-    body: Center(child: Text(name.toUpperCase(),style: TextStyle(color: Colors.red ,),)),
+    body: Center(child: Text(name.toUpperCase(),style: const TextStyle(color: Colors.red),)),
+    
+     floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Print',
+        child: const Icon(Icons.add),
+      )
   )
   );
 }
